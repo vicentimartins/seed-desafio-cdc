@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+app_api:
+  resource: './routes/dev/api.yaml'
+  prefix: '/api/v1'
+  name_prefix: 'api_'

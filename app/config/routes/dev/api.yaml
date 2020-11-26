@@ -1,0 +1,4 @@
+author:
+  path: '/admin/author'
+  methods: 'POST'
+  controller: 'App\Controller\AuthorController::create'

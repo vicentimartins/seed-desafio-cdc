@@ -1,5 +1,27 @@
-# Faça um fork desse repositório
+# Seed challenge cdc
 
-Este é um repositório vazio de propósito. A ideia é que você faça um fork para que eu, Alberto, possa usar o github para ter a chance de olhar vários dos códigos produzido por você e seus(as) colegas da Jornada Dev Eficiente :). 
+Challenge propused on [Jornada dev eficiente](https://deveficiente.com) class.
 
-Durante cada uma das seis semanas eu vou pegar código por amostragem e analisar. Feito isso, vou criar um vídeo anonimizando a pessoa que é dona do código, com as minhas observações e postar isso como material de suporte da funcionalidade :). 
+by Vicente Martins
+
+## How to run this project
+
+- Clone this project:
+
+```bash
+ git clone git@github.com:vicentimartins/seed-desafio-cdc.git seed-challenge-cdc
+```
+
+- Go to path where the project was cloned
+
+```bash
+  cd seed-challenge-cdc
+```
+
+- Build and run docker-compose:
+
+```bash
+  docker-compose up -d --build
+```
+
+It's done! This steps should be all that you need to have this project up.
