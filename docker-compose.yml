@@ -17,6 +17,8 @@ services:
     depends_on:
       - php
       - postgres
+    networks:
+      - backend
 
   php:
     env_file:
@@ -29,6 +31,8 @@ services:
     volumes:
       - ./app:/app
       - .docker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
+    networks:
+      - backend
 
   postgres:
     image: postgres:11.1-alpine
@@ -44,3 +48,9 @@ services:
       - POSTGRES_DB=$POSTGRES_DB
     ports:
       - "$DB_PORT:5432"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
