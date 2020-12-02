@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Author;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -17,6 +18,23 @@ class AuthorRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Author::class);
+    }
+
+    public function create(array $data): Author
+    {
+        $entityManager = $this->getEntityManager();
+
+        $author = new Author();
+        $author->setName($data['name']);
+        $author->setEmail($data['email']);
+        $author->setDescription($data['description']);
+        $author->setCreatedAt(new DateTime('now'));
+        $author->setUpdatedAt(new DateTime('now'));
+
+        $entityManager->persist($author);
+        $entityManager->flush();
+
+        return $author;
     }
 
     // /**
